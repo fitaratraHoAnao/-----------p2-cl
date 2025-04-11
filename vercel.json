@@ -4,9 +4,61 @@
     {
       "src": "index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "handles/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "commands/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pilot/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/handles/(.*)",
+      "dest": "/handles/$1"
+    },
+    {
+      "src": "/handleMessage.js",
+      "dest": "/handles/handleMessage.js"
+    },
+    {
+      "src": "/handlePostback.js",
+      "dest": "/handles/handlePostback.js"
+    },
+    {
+      "src": "/sendMessage.js",
+      "dest": "/handles/sendMessage.js"
+    },
+    {
+      "src": "/commands/(.*)",
+      "dest": "/commands/$1"
+    },
+    {
+      "src": "/pilot/(.*)",
+      "dest": "/pilot/$1"
+    },
+    {
+      "src": "/styles.css",
+      "dest": "/public/styles.css"
+    },
+    {
+      "src": "/script.js",
+      "dest": "/public/script.js"
+    },
     {
       "src": "/(.*)",
       "dest": "/index.js"
